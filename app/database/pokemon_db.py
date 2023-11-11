@@ -1,6 +1,6 @@
 import csv
-from models.pokemon import Pokemon
 from fastapi import HTTPException
+from app.models.pokemon import Pokemon
 
 class PokemonDatabase:
     

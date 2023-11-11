@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 
-from database.pokemon_db import PokemonDatabase
 from fastapi import FastAPI
 from typing import Optional
+from app.database.pokemon_db import PokemonDatabase
 
 app = FastAPI()
-db = PokemonDatabase('./data/pokemon.csv')
+db = PokemonDatabase('./app/data/pokemon.csv')
 
 
 @app.get("/pokemon/id/{pokemon_id}")
