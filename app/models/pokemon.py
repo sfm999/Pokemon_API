@@ -50,7 +50,13 @@ class Pokemon:
 
     def to_string(self):
         return """
-Index: {0}\nName: {1}\nType One: {2}\nType Two: {3}\nHP: {5}\nAttack: {6}\nDefense: {7}\nBase Stats total: {4}
+Index: {0}\nName: {1}\nType One: {2}\nType Two: {3}\nBase Stats total: {4}\nHP: {5}\nAttack: {6}\nDefense: {7}\n
 Generation: {8}\nLegendary: {9}
-""".format(self.index, self.name, self.typeOne, self.typeTwo,
-            self.hp, self.attack, self.defense, self.baseStatsTotal, self.generation, self.legendary)
+""".format(self.index, self.name, self.typeOne, self.typeTwo, self.baseStatsTotal,
+            self.hp, self.attack, self.defense, self.generation, self.legendary)
+
+    def to_csv(self):
+        return ', '.join([str(x) for x in vars(self).values()])
+    
+    def compare_to(self, pokemon):
+        return vars(self) == vars(pokemon)
