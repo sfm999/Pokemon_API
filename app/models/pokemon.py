@@ -48,12 +48,15 @@ class Pokemon:
         else:
             self.speed = '';
 
-    def to_string(self):
+    def pretty_print(self):
         return """
 Index: {0}\nName: {1}\nType One: {2}\nType Two: {3}\nBase Stats total: {4}\nHP: {5}\nAttack: {6}\nDefense: {7}\n
 Generation: {8}\nLegendary: {9}
 """.format(self.index, self.name, self.typeOne, self.typeTwo, self.baseStatsTotal,
             self.hp, self.attack, self.defense, self.generation, self.legendary)
+
+    def to_string(self):
+        return vars(self)
 
     def to_csv(self):
         return ', '.join([str(x) for x in vars(self).values()])
