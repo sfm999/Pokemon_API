@@ -1,7 +1,6 @@
 import csv
 from fastapi import HTTPException
-from sqlalchemy.orm import Session
-from app.models.pokemon import Pokemon
+from models.pokemon import Pokemon
 
 class PokemonDatabase:
     last_index = -1

@@ -2,11 +2,10 @@
 
 from fastapi import FastAPI
 from typing import Optional
-from app.database.pokemon_db import PokemonDatabase
-from app.models.pokemon import Pokemon
+from database.pokemon_db import PokemonDatabase
 
 app = FastAPI()
-db = PokemonDatabase('./app/data/pokemon.csv')
+db = PokemonDatabase('./data/pokemon.csv')
 
 @app.get("/pokemon/index/{pokemon_id}")
 def get_pokemon_by_id(pokemon_id: Optional[int] = None):
